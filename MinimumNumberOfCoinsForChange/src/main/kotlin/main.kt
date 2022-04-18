@@ -3,10 +3,10 @@ import kotlin.math.min
 fun main(args: Array<String>) {
     println("Hello World!")
 
-    minNoOfCoinsToMakeChange(7, listOf(2, 4)).also { println(it) }
+    minNumberOfCoinsForChange(7, listOf(2, 4)).also { println(it) }
 }
 
-fun minNoOfCoinsToMakeChange(n: Int, denom: List<Int>) : Int {
+fun minNumberOfCoinsForChange(n: Int, denom: List<Int>) : Int {
 
     denom.sorted()
 
