@@ -3,7 +3,7 @@ import kotlin.math.min
 fun main(args: Array<String>) {
     println("Hello World!")
 
-    minNoOfCoinsToMakeChange(11, listOf(1, 2, 5)).also { println(it) }
+    minNoOfCoinsToMakeChange(7, listOf(2, 4)).also { println(it) }
 }
 
 fun minNoOfCoinsToMakeChange(n: Int, denom: List<Int>) : Int {
@@ -29,5 +29,5 @@ fun minNoOfCoinsToMakeChange(n: Int, denom: List<Int>) : Int {
         }
     }
 
-    return mTable.last().last()
+    return mTable.last().last().let { if(it > n) -1 else it}
 }
