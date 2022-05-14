@@ -14,9 +14,6 @@ fun findKthLargestValueInBst(tree: BST, k: Int): Int {
 
 //Can also be done with an inorder traversal and then counting from reverse
 fun traverseAndFind(tree: BST, k: Int, result: MutableMap<Int, Int>) : MutableMap<Int, Int> {
-    if(result[1] == k) {
-        return result
-    }
     if(tree.right != null) {
         traverseAndFind(tree.right!!, k, result)
     }
@@ -29,9 +26,7 @@ fun traverseAndFind(tree: BST, k: Int, result: MutableMap<Int, Int>) : MutableMa
         result[1] = result[1]!! + 1
         result[0] = tree.value
     }
-    if(result[1] == k) {
-        return result
-    }
+
     if(tree.left != null) {
         traverseAndFind(tree.left!!, k, result)
     }
